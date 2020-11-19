@@ -1,0 +1,33 @@
+{% extends 'admin/master.html' %}
+<title>{% block title %} Lecture List {% endblock %}</title>
+{% block content %}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Lecture List</h1>
+</div>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Question text</th>
+            <th scope="col">File</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.question_text }}</td>
+            <td width="250px">
+                <video width='200' controls>
+                    <source src="media/{{ item.file }}" type='video/mp4'>
+                </video>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+<!-- /.container-fluid -->
+{% endblock content %}

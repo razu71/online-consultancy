@@ -1,0 +1,33 @@
+{% extends 'admin/master.html' %}
+<title>{% block title %} Lecture Add {% endblock %}</title>
+{% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Add Lecture</h1>
+    </div>
+    <!--{{items}} -->
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="question_text">Lecture title</label>
+                <input type="text" class="form-control" id="question_text" name="question_text"
+                       placeholder="question text">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="question_text">Lecture File</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="file" id="customFile" accept="video/*">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+            </div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit form">
+    </form>
+</div>
+<!-- /.container-fluid -->
+{% endblock content %}
